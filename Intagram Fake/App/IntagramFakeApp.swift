@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct Intagram_FakeApp: App {
+struct IntagramFakeApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
