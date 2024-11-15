@@ -29,7 +29,7 @@ struct CurrentUserProfileView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing, content: {
                     Button{
-                        
+                        Task { try await AuthService.shared.signOut() }
                     }label: {
                         Image(systemName: "line.3.horizontal")
                             .foregroundColor(.black)

@@ -1,5 +1,5 @@
 //
-//  CompleteSignUpView.swift
+//  CreatePasswordView.swift
 //  Intagram Fake
 //
 //  Created by Akshay kumar shaw on 14/11/24.
@@ -7,27 +7,33 @@
 
 import SwiftUI
 
-struct CompleteSignUpView: View {
+struct CreatePasswordView: View {
     
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack(spacing: 12) {
-            Text("Welcome to Instagram,\nakshaw.one")
+            Text("Create a password")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
-                .multilineTextAlignment(.center)
             
-            Text("Click below to complete registration and start using Instagram.")
+            Text("Your password must be 6 characters in lenght.")
                 .font(.footnote)
+                .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
+            SecureField("password", text: $viewModel.password)
+                .modifier(IGTextFeildModifier())
+                .padding(.top)
+            
             NavigationLink {
-                
+                CompleteSignUpView()
+                    .navigationBarBackButtonHidden(true)
             }label: {
-                Text("Complete Sign Up")
+                Text("Next")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -36,6 +42,9 @@ struct CompleteSignUpView: View {
                     .cornerRadius(8)
             }
             .padding(.vertical)
+            
+            Spacer()
+                
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading){
@@ -51,5 +60,5 @@ struct CompleteSignUpView: View {
 }
 
 #Preview {
-    CompleteSignUpView()
+    CreatePasswordView()
 }

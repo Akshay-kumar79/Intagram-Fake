@@ -1,5 +1,5 @@
 //
-//  CreateUserNameView.swift
+//  CompleteSignUpView.swift
 //  Intagram Fake
 //
 //  Created by Akshay kumar shaw on 14/11/24.
@@ -7,34 +7,30 @@
 
 import SwiftUI
 
-struct CreateUserNameView: View {
+struct CompleteSignUpView: View {
     
-    @State private var username = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack(spacing: 12) {
-            Text("Create username")
+            Text("Welcome to Instagram,\n\(viewModel.username)")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
+                .multilineTextAlignment(.center)
             
-            Text("Pick a username for your account. You can always change it later.")
+            Text("Click below to complete registration and start using Instagram.")
                 .font(.footnote)
-                .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            TextField("username", text: $username)
-                .autocapitalization(.none)
-                .modifier(IGTextFeildModifier())
-                .padding(.top)
-            
-            NavigationLink {
-                CreatePasswordView()
-                    .navigationBarBackButtonHidden(true)
+            Button {
+                Task {
+                    try await viewModel.createUser()
+                }
             }label: {
-                Text("Next")
+                Text("Complete Sign Up")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -43,9 +39,6 @@ struct CreateUserNameView: View {
                     .cornerRadius(8)
             }
             .padding(.vertical)
-            
-            Spacer()
-                
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading){
@@ -61,5 +54,5 @@ struct CreateUserNameView: View {
 }
 
 #Preview {
-    CreateUserNameView()
+    CompleteSignUpView()
 }

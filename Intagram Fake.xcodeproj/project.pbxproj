@@ -6,7 +6,15 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2C925D102CE7878800B0B764 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C925D0F2CE7878800B0B764 /* GoogleService-Info.plist */; };
+		2C925D132CE7885400B0B764 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C925D122CE7885400B0B764 /* FirebaseAuth */; };
+		2C925D152CE7885400B0B764 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2C925D142CE7885400B0B764 /* FirebaseFirestore */; };
+		2C925D172CE7885400B0B764 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2C925D162CE7885400B0B764 /* FirebaseStorage */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		2C925D0F2CE7878800B0B764 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CF356A92CE3AC43003FC1E6 /* Intagram Fake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Intagram Fake.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -23,6 +31,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C925D132CE7885400B0B764 /* FirebaseAuth in Frameworks */,
+				2C925D152CE7885400B0B764 /* FirebaseFirestore in Frameworks */,
+				2C925D172CE7885400B0B764 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +45,7 @@
 			children = (
 				2CF356AB2CE3AC43003FC1E6 /* Intagram Fake */,
 				2CF356AA2CE3AC43003FC1E6 /* Products */,
+				2C925D0F2CE7878800B0B764 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,6 +77,9 @@
 			);
 			name = "Intagram Fake";
 			packageProductDependencies = (
+				2C925D122CE7885400B0B764 /* FirebaseAuth */,
+				2C925D142CE7885400B0B764 /* FirebaseFirestore */,
+				2C925D162CE7885400B0B764 /* FirebaseStorage */,
 			);
 			productName = "Intagram Fake";
 			productReference = 2CF356A92CE3AC43003FC1E6 /* Intagram Fake.app */;
@@ -94,6 +109,9 @@
 			);
 			mainGroup = 2CF356A02CE3AC43003FC1E6;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				2C925D112CE7885400B0B764 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2CF356AA2CE3AC43003FC1E6 /* Products */;
 			projectDirPath = "";
@@ -109,6 +127,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C925D102CE7878800B0B764 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,7 +284,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.venus.Intagram-Fake";
+				PRODUCT_BUNDLE_IDENTIFIER = com.venus.Intagram.fake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -294,7 +313,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.venus.Intagram-Fake";
+				PRODUCT_BUNDLE_IDENTIFIER = com.venus.Intagram.fake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -324,6 +343,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2C925D112CE7885400B0B764 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2C925D122CE7885400B0B764 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C925D112CE7885400B0B764 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		2C925D142CE7885400B0B764 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C925D112CE7885400B0B764 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		2C925D162CE7885400B0B764 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C925D112CE7885400B0B764 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 2CF356A12CE3AC43003FC1E6 /* Project object */;
 }

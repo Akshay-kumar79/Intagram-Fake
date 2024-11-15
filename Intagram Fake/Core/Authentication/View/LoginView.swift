@@ -12,6 +12,8 @@ struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
     
+    @EnvironmentObject var viewModel: AuthViewModel
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -25,11 +27,11 @@ struct LoginView: View {
                 
                 // Text Fields
                 VStack {
-                    TextField("Enter your email", text: $email)
+                    TextField("Enter your email", text: $viewModel.loginEmail)
                         .autocapitalization(.none)
                         .modifier(IGTextFeildModifier())
                     
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $viewModel.loginPassword)
                         .modifier(IGTextFeildModifier())
                 }
                 
@@ -47,7 +49,9 @@ struct LoginView: View {
                 
                 // Login Button
                 Button {
-                    
+                    Task{
+                        try await viewModel.loginUser()
+                    }
                 }label: {
                     Text("Login")
                         .font(.subheadline)

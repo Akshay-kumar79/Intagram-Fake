@@ -1,5 +1,5 @@
 //
-//  CreatePasswordView.swift
+//  AddEmailView.swift
 //  Intagram Fake
 //
 //  Created by Akshay kumar shaw on 14/11/24.
@@ -7,33 +7,34 @@
 
 import SwiftUI
 
-struct CreatePasswordView: View {
+struct AddEmailView: View {
     
-    @State private var password = ""
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         VStack(spacing: 12) {
-            Text("Create a password")
+            Text("Add your email")
                 .font(.title2)
                 .fontWeight(.bold)
                 .padding(.top)
             
-            Text("Your password must be 6 characters in lenght.")
+            Text("You'll use this email to sign in to your account")
                 .font(.footnote)
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            SecureField("password", text: $password)
+            TextField("Email", text: $viewModel.email)
+                .autocapitalization(.none)
                 .modifier(IGTextFeildModifier())
                 .padding(.top)
             
-            NavigationLink {
-                CompleteSignUpView()
+            NavigationLink{
+                CreateUserNameView()
                     .navigationBarBackButtonHidden(true)
-            }label: {
-                Text("Next")
+            } label: {
+                Text("Login")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
@@ -44,7 +45,6 @@ struct CreatePasswordView: View {
             .padding(.vertical)
             
             Spacer()
-                
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading){
@@ -55,10 +55,9 @@ struct CreatePasswordView: View {
                     }
             }
         }
-
     }
 }
 
 #Preview {
-    CreatePasswordView()
+    AddEmailView()
 }
