@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 struct User: Codable, Identifiable, Hashable {
     let id: String
@@ -14,6 +15,11 @@ struct User: Codable, Identifiable, Hashable {
     var fullName: String?
     var bio: String?
     let email: String
+    
+    var isCurrentUser: Bool{
+        guard let currentUser = Auth.auth().currentUser else { return false }
+        return id == currentUser.uid
+    }
 }
 
 extension User {

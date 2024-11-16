@@ -19,10 +19,15 @@ class AuthViewModel: ObservableObject {
     
     func createUser() async throws {
         try await AuthService.shared.createUser(email: email, password: password, username: username)
+        username = ""
+        email = ""
+        password = ""
     }
     
     func loginUser() async throws {
         try await AuthService.shared.login(email: loginEmail, password: loginPassword)
+        loginEmail = ""
+        loginPassword = ""
     }
     
 }
