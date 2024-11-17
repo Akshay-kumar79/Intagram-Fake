@@ -7,14 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2C925D102CE7878800B0B764 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C925D0F2CE7878800B0B764 /* GoogleService-Info.plist */; };
+		2C3AD52F2CE99508001E0C3E /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2C3AD52E2CE99508001E0C3E /* Kingfisher */; };
 		2C925D132CE7885400B0B764 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 2C925D122CE7885400B0B764 /* FirebaseAuth */; };
 		2C925D152CE7885400B0B764 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 2C925D142CE7885400B0B764 /* FirebaseFirestore */; };
 		2C925D172CE7885400B0B764 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2C925D162CE7885400B0B764 /* FirebaseStorage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2C925D0F2CE7878800B0B764 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2CF356A92CE3AC43003FC1E6 /* Intagram Fake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Intagram Fake.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -31,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C3AD52F2CE99508001E0C3E /* Kingfisher in Frameworks */,
 				2C925D132CE7885400B0B764 /* FirebaseAuth in Frameworks */,
 				2C925D152CE7885400B0B764 /* FirebaseFirestore in Frameworks */,
 				2C925D172CE7885400B0B764 /* FirebaseStorage in Frameworks */,
@@ -45,7 +45,6 @@
 			children = (
 				2CF356AB2CE3AC43003FC1E6 /* Intagram Fake */,
 				2CF356AA2CE3AC43003FC1E6 /* Products */,
-				2C925D0F2CE7878800B0B764 /* GoogleService-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -80,6 +79,7 @@
 				2C925D122CE7885400B0B764 /* FirebaseAuth */,
 				2C925D142CE7885400B0B764 /* FirebaseFirestore */,
 				2C925D162CE7885400B0B764 /* FirebaseStorage */,
+				2C3AD52E2CE99508001E0C3E /* Kingfisher */,
 			);
 			productName = "Intagram Fake";
 			productReference = 2CF356A92CE3AC43003FC1E6 /* Intagram Fake.app */;
@@ -111,6 +111,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				2C925D112CE7885400B0B764 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2C3AD52D2CE99508001E0C3E /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 2CF356AA2CE3AC43003FC1E6 /* Products */;
@@ -127,7 +128,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C925D102CE7878800B0B764 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,6 +345,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2C3AD52D2CE99508001E0C3E /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
 		2C925D112CE7885400B0B764 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -356,6 +364,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2C3AD52E2CE99508001E0C3E /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2C3AD52D2CE99508001E0C3E /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
 		2C925D122CE7885400B0B764 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 2C925D112CE7885400B0B764 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
