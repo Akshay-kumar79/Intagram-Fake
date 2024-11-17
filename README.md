@@ -1,3 +1,6 @@
+# Setup
+Add firebase GoogleServices-Info.plist file in root folder. Enable email/password authentication, firestore, and storage in Firebase console of your project.
+
 # Demo
 
 <div align="center">
